@@ -109,6 +109,14 @@ export default class ModalDropdown extends Component {
     return newState;
   }
 
+  componentDidMount() {
+    this.props.currentRef(this);
+  }
+
+  componentWillUnmount() {
+    this.props.currentRef(undefined);
+  }
+
   render() {
     return (
       <View {...this.props}>
